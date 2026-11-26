@@ -166,8 +166,19 @@ body {overflow-x:clip}
 .hero h1 em {display:inline-block}
 .hero h1 em.glitch {transform:translateX(3px) skewX(-7deg);text-shadow:-4px 0 #48c9c08c,4px 0 #e1675399}
 .returned .hero h1 em {color:#ff5a41}
-.print-figure {position:absolute;left:52.6%;top:51%;height:17%;aspect-ratio:.36;background:#0d0b0a;border-radius:45% 45% 12% 12%/22% 22% 6% 6%;opacity:0;transition:opacity 1.8s .9s;filter:blur(.4px)}
-.evidence-print:hover .print-figure,.evidence-print:focus-visible .print-figure {opacity:.92}
+.print-image {overflow:hidden}
+.print-time {z-index:1}
+.print-figure,.hero-pics::after {background:url('assets/guest.svg') center bottom/contain no-repeat;pointer-events:none}
+.print-figure {position:absolute;left:53%;bottom:26%;height:27%;aspect-ratio:440/600;translate:-50% 0;opacity:0;filter:grayscale(1) brightness(.66)}
+.hero[data-frame="far"] .print-figure {opacity:.92}
+.hero[data-frame="near"] .print-figure {left:49%;bottom:-53%;height:152%;opacity:1}
+.hero-pics::after {content:'';position:absolute;inset:0 -11% -30% 65%;background-position:center top;opacity:0;filter:grayscale(1) brightness(.65)}
+.hero[data-frame="empty"] .hero-pics::after {opacity:.75}
+.hero[data-frame="empty"] .ink-circle {border-style:dashed}
+#gate:not(.leaving)::backdrop {background:linear-gradient(90deg,#06060655,#090807a6 40%,#090807a6 60%,#06060655),url('assets/north-wing.jpg') center/cover}
+#gate::before,#gate::after {background:radial-gradient(ellipse 120% 80% at 100% 45%,#130f0eeb,#0a090873 70%)}
+@media(max-width:760px){.hero-pics::after{inset:20% -28% -8% 56%}}
+@media(prefers-reduced-motion:reduce){.hero-pics{animation:none}}
 #estateLine {transition:color 1.2s}
 #estateLine.bled {color:#dd8a76}
 
